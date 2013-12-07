@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Poisson Image Blending - App</title>
+		<link rel="stylesheet" href="../style.css" type="text/css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<span class="right">
+				<a href="../demo">Poisson Image Blending - Demo</a> | <a href="http://takuti.me">takuti.me</a>
+			</span>
+			<h1>Poisson Image Blending - App</h1>
+			<div id="front">
+				<p>Please try <a href="../demo/"><span class="strong">demo</span></a> at first.</p><br />
+				<p>
+					This app is beta release. Size of image will automatically be 150x150 pixels.
+				</p><br />
+				<div id="file-select" class="clearfix">
+					<div>
+						<h3>1. Select <span class="strong">Base Image</span></h3>
+						<input type="file" id="base-file" /><br /><br />
+						<output id="base-img"></output>
+					</div>
+					<div>
+						<h3>2. Select <span class="strong">Blend Source Image</span></h3>
+						<input type="file" id="src-file" /><br /><br />
+						<output id="src-img"></output>
+					</div>
+				</div><!-- /file-select -->
+				<button id="start-app" onclick="startApp()">Start App</button>
+			</div><!-- /front -->
+			<div id="app">
+				<div id="canvases" class="clearfix">
+					<div>
+						<span class="strong">Base Image</span><br />
+						<canvas id="base-canvas" height="150" width="150"></canvas>
+					</div>
+					<div>
+						<span class="strong">Blend Source Image</span><br />
+		      	<canvas id="src-canvas" height="150" width="150"></canvas>
+		      </div>
+		    </div><!-- /canvases -->
+		    <div id="steps" class="clearfix">
+			    <div>
+			    	<h3>Step1</h3>
+			    	Choose Gradients.<br /><br />
+						<span class="strong">Gradients</span>:
+							<label><input type="radio" name="gradients" onclick="changeGradients('importing')" checked>Importing</label>
+							<label><input type="radio" name="gradients" onclick="changeGradients('mixing')">Mixing</label>
+					</div>
+			    <div>
+				    <h3>Step2</h3>
+				    &#8595; Draw mask area. <br />
+				    <canvas id="mask-canvas" height="150" width="150"></canvas><br />
+				    If you finish, click
+				    <button name="adjustBtn" onclick="adjustBlendPosition()">HERE</button>.
+			    </div>
+			    <div>
+			    	<h3>Step3</h3>
+			    	<canvas id="result-canvas" height="150" width="150"></canvas><br />
+				    Adjust blend position:
+				    <button name="directionBtn" onclick="moveBlendPosition('up')">&#8593;</button>
+				    <button name="directionBtn" onclick="moveBlendPosition('right')">&#8594;</button>
+				    <button name="directionBtn" onclick="moveBlendPosition('down')">&#8595;</button>
+				    <button name="directionBtn" onclick="moveBlendPosition('left')">&#8592;</button>
+				    <br />
+				  	<button name="blendBtn" onclick="blendImages()">OK, let's start blending</button>
+			  	</div>
+		  	</div><!-- /steps -->
+		  	<div id="footer">
+		  		<button name="resetBtn" onclick="initializeCanvas()">Reset all Canvas</button>
+					<button name="pageReloadBtn" onclick="location.reload()">Select images again</button>
+		    	<button name="saveBtn" onclick="saveResult()">Save Step3's canvas as image</button><br />
+		  		* P. Pérez, M. Gangnet, A. Blake. Poisson image editing. ACM Transactions on Graphics (SIGGRAPH'03), 22(3):313-318, 2003.
+		  	</div>
+		  </div><!-- /app -->
+    </div><!-- /wrapper -->
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="../common.js"></script>
+		<script src="save_blob.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
