@@ -157,8 +157,8 @@ function adjustBlendPosition() {
   mask_canvas.removeEventListener("mousedown", startDrawing, true);
   mask_canvas.removeEventListener("mouseup", finishDrawing, true);
 
+  setButtonState("adjustBtn", false);
   setButtonState("blendBtn", true);
-	setButtonState("adjustBtn", false);
 	setButtonState("directionBtn", true);
 }
 function moveBlendPosition(direction) {
@@ -277,12 +277,13 @@ function blendImages() {
 	} while(true);
 	result_ctx.putImageData(result_pixels, 0, 0);
 
-	setButtonState("adjustBtn", false);
-	setButtonState("directionBtn", false);
+	mask_canvas.addEventListener("mousemove", drawMask, true);
+	mask_canvas.addEventListener("mousedown", startDrawing, true);
+	mask_canvas.addEventListener("mouseup", finishDrawing, true);
 
-	mask_canvas.removeEventListener("mousemove", drawMask, true);
-  mask_canvas.removeEventListener("mousedown", startDrawing, true);
-  mask_canvas.removeEventListener("mouseup", finishDrawing, true);
+	setButtonState("adjustBtn", true);
+	setButtonState("blendBtn", false);
+	setButtonState("directionBtn", false);
 
 	alert(cnt+" times iterated.");
 }
