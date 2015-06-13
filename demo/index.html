@@ -1,87 +1,87 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Poisson Image Blending - Demo</title>
-		<link rel="stylesheet" href="../style.css" type="text/css" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<span class="right">
-				<a href="../app">Poisson Image Blending - App</a> | <a href="http://takuti.me">takuti.me</a>
-			</span>
-			<h1>Poisson Image Blending - Demo</h1>
-			<div id="canvases" class="clearfix">
-				<div>
-					<span class="strong">Base Image</span><br />
-					<canvas id="base-canvas" height="150" width="150"></canvas>
-				</div>
-				<div>
-					<span class="strong">Blend Source Image</span><br />
-	      	<canvas id="src-canvas" height="150" width="150"></canvas>
-	      </div>
-	    </div><!-- /canvases -->
-	    <div id="steps" class="clearfix">
-		    <div>
-		    	<h3>Step1</h3>
-		    	Choose Gradients and Image Set.<br /><br />
-					<span class="strong">Gradients</span>:
-						<label><input type="radio" name="gradients" onclick="changeGradients('importing')" checked>Importing</label>
-						<label><input type="radio" name="gradients" onclick="changeGradients('mixing')">Mixing</label>
-					<br />
-					<span class="strong">Image Set</span>:
-						<label><input type="radio" name="image" onclick="changeImageSet('face')" checked>Faces</label>
-						<label><input type="radio" name="image" onclick="changeImageSet('hand')">Hand&amp;Sign</label>
-					<br /><br />
-					<table>
-						<caption>Suitable combinations</caption>
-						<tr>
-							<td></td>
-							<th>Importing</th>
-							<th>Mixing</th>
-						</tr>
-						<tr>
-							<th>Faces</th>
-							<td>&#9711;</td>
-							<td>&#9651;</td>
-						</tr>
-						<tr>
-							<th>Hand&amp;Sign</th>
-							<td>&#9651;</td>
-							<td>&#9711;</td>
-						</tr>
-					</table>
-				</div>
-		    <div>
-			    <h3>Step2</h3>
-			    &#8595; Draw mask area. <br />
-			    <canvas id="mask-canvas" height="150" width="150"></canvas><br />
-			    If you finish, click
-			    <button name="adjustBtn" onclick="adjustBlendPosition()">HERE</button>.
-		    </div>
-		    <div>
-		    	<h3>Step3</h3>
-		    	<canvas id="result-canvas" height="150" width="150"></canvas><br />
-			    Adjust blend position:
-			    <button name="directionBtn" onclick="moveBlendPosition('up')">&#8593;</button>
-			    <button name="directionBtn" onclick="moveBlendPosition('right')">&#8594;</button>
-			    <button name="directionBtn" onclick="moveBlendPosition('down')">&#8595;</button>
-			    <button name="directionBtn" onclick="moveBlendPosition('left')">&#8592;</button>
-			    <br />
-			  	<button name="blendBtn" onclick="blendImages()">OK, let's start blending</button>
-		  	</div>
-	  	</div><!-- /steps -->
-	  	<div id="footer">
-	  		<button name="resetBtn" onclick="initializeCanvas()">Reset all Canvas</button><br />
-	  		* P. Pérez, M. Gangnet, A. Blake. Poisson image editing. ACM Transactions on Graphics (SIGGRAPH'03), 22(3):313-318, 2003.<br />
-	  		* <a href="http://opencv.jp/opencv2-x-samples/poisson-blending">Poisson Blending | OpenCV.jp</a>
-	  	</div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Poisson Image Blending - Demo</title>
+    <link rel="stylesheet" href="../style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <span class="right">
+        <a href="../app">Poisson Image Blending - App</a> | <a href="http://takuti.me">takuti.me</a>
+      </span>
+      <h1>Poisson Image Blending - Demo</h1>
+      <div id="canvases" class="clearfix">
+        <div>
+          <span class="strong">Base Image</span><br />
+          <canvas id="base-canvas" height="150" width="150"></canvas>
+        </div>
+        <div>
+          <span class="strong">Blend Source Image</span><br />
+          <canvas id="src-canvas" height="150" width="150"></canvas>
+        </div>
+      </div><!-- /canvases -->
+      <div id="steps" class="clearfix">
+        <div>
+          <h3>Step1</h3>
+          Choose Gradients and Image Set.<br /><br />
+          <span class="strong">Gradients</span>:
+            <label><input type="radio" name="gradients" onclick="changeGradients('importing')" checked>Importing</label>
+            <label><input type="radio" name="gradients" onclick="changeGradients('mixing')">Mixing</label>
+          <br />
+          <span class="strong">Image Set</span>:
+            <label><input type="radio" name="image" onclick="changeImageSet('face')" checked>Faces</label>
+            <label><input type="radio" name="image" onclick="changeImageSet('hand')">Hand&amp;Sign</label>
+          <br /><br />
+          <table>
+            <caption>Suitable combinations</caption>
+            <tr>
+              <td></td>
+              <th>Importing</th>
+              <th>Mixing</th>
+            </tr>
+            <tr>
+              <th>Faces</th>
+              <td>&#9711;</td>
+              <td>&#9651;</td>
+            </tr>
+            <tr>
+              <th>Hand&amp;Sign</th>
+              <td>&#9651;</td>
+              <td>&#9711;</td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <h3>Step2</h3>
+          &#8595; Draw mask area. <br />
+          <canvas id="mask-canvas" height="150" width="150"></canvas><br />
+          If you finish, click
+          <button name="adjustBtn" onclick="adjustBlendPosition()">HERE</button>.
+        </div>
+        <div>
+          <h3>Step3</h3>
+          <canvas id="result-canvas" height="150" width="150"></canvas><br />
+          Adjust blend position:
+          <button name="directionBtn" onclick="moveBlendPosition('up')">&#8593;</button>
+          <button name="directionBtn" onclick="moveBlendPosition('right')">&#8594;</button>
+          <button name="directionBtn" onclick="moveBlendPosition('down')">&#8595;</button>
+          <button name="directionBtn" onclick="moveBlendPosition('left')">&#8592;</button>
+          <br />
+          <button name="blendBtn" onclick="blendImages()">OK, let's start blending</button>
+        </div>
+      </div><!-- /steps -->
+      <div id="footer">
+        <button name="resetBtn" onclick="initializeCanvas()">Reset all Canvas</button><br />
+        * P. Pérez, M. Gangnet, A. Blake. Poisson image editing. ACM Transactions on Graphics (SIGGRAPH'03), 22(3):313-318, 2003.<br />
+        * <a href="http://opencv.jp/opencv2-x-samples/poisson-blending">Poisson Blending | OpenCV.jp</a>
+      </div>
     </div><!-- /wrapper -->
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<script src="../common.js"></script>
-		<script src="demo.js"></script>
-	</body>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../common.js"></script>
+    <script src="demo.js"></script>
+  </body>
 </html>

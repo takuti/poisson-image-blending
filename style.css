@@ -5,35 +5,35 @@
  init
  --------------*/
  html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border:0; font-family:inherit; font-size:100%; font-style:inherit; font-weight:inherit;
- 	margin:0; padding:0; vertical-align:baseline;
+   margin:0; padding:0; vertical-align:baseline;
  }
  body{ background:#fff;
- 	line-height:1.5; margin:1.5em 0;
+   line-height:1.5; margin:1.5em 0;
  }
  table{
- 	border-collapse:separate; border-spacing:0;
+   border-collapse:separate; border-spacing:0;
  }
  caption, th, td{ font-weight:400;
- 	text-align:left;
+   text-align:left;
  }
  blockquote:before, blockquote:after, q:before, q:after {
- 	content:"";
+   content:"";
  }
  blockquote, q{
- 	quotes:"" "";
+   quotes:"" "";
  }
  a img{
- 	border:none;
+   border:none;
  }
 
 /*--------------
  common
  --------------*/
  body {
- 	background: #fff;
- 	color: #393939;
- 	font-family: 'Merriweather', serif;
- 	font-size: 13px;
+   background: #fff;
+   color: #393939;
+   font-family: 'Merriweather', serif;
+   font-size: 13px;
  }
 
  h1 { font-size: 2em; }
@@ -42,16 +42,16 @@
  a { color: #393939; }
  a:hover {
 
- 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE */
- 	filter: alpha(opacity=80); /* IE */
- 	opacity: 0.8;
- 	/* text-decoration: none; */
- 	-moz-transition: 0.4s ease-in-out;
- 	-o-transition: 0.4s ease-in-out;
- 	-webkit-transition: 0.4s ease-in-out;
- 	transition: 0.4s ease-in-out;
- 	-moz-opacity:0.8; /* Firefox(old) */
- 	-khtml-opacity: 0.8; /* Safari(old) */
+   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE */
+   filter: alpha(opacity=80); /* IE */
+   opacity: 0.8;
+   /* text-decoration: none; */
+   -moz-transition: 0.4s ease-in-out;
+   -o-transition: 0.4s ease-in-out;
+   -webkit-transition: 0.4s ease-in-out;
+   transition: 0.4s ease-in-out;
+   -moz-opacity:0.8; /* Firefox(old) */
+   -khtml-opacity: 0.8; /* Safari(old) */
  }
  a:visited { color: #393939; }
 
@@ -60,96 +60,96 @@
  dd { margin: 0 0 1.5em 1.5em; }
 
  button {
- 	background: #42aac7;
- 	border: none;
- 	color: #fff;
- 	margin-bottom: 10px;
- 	min-width: 25px;
- 	outline: none;
- 	padding: 5px;
+   background: #42aac7;
+   border: none;
+   color: #fff;
+   margin-bottom: 10px;
+   min-width: 25px;
+   outline: none;
+   padding: 5px;
  }
  button:disabled {
- 	background: #97d3e3;
+   background: #97d3e3;
  }
 
  #wrapper {
- 	margin: 0 auto;
- 	width: 900px;
+   margin: 0 auto;
+   width: 900px;
  }
 
  #wrapper div {
- 	margin: 10px 0;
+   margin: 10px 0;
  }
 
  #canvases { border-bottom: 1px solid #aaa; }
 
  #canvases div, #steps div {
- 	float: left;
+   float: left;
  }
 
  #canvases div {
- 	margin-right: 50px;
+   margin-right: 50px;
  }
 
  #steps div {
- 	height: 270px;
- 	width: 282px;
+   height: 270px;
+   width: 282px;
  }
  #steps div:nth-child(2), #steps div:nth-child(3) {
- 	border-left: 1px solid #aaa;
- 	padding-left: 26px;
+   border-left: 1px solid #aaa;
+   padding-left: 26px;
  }
 
  #footer {
- 	border-top: 1px solid #aaa;
- 	padding-top: 10px;
+   border-top: 1px solid #aaa;
+   padding-top: 10px;
  }
 
  .strong { font-weight: bold; }
  .right {
- 	display: block;
- 	text-align: right;
+   display: block;
+   text-align: right;
  }
 
  .clearfix:after {
- 	clear: both;
- 	content: "";
- 	display: block;
+   clear: both;
+   content: "";
+   display: block;
  }
 
 /*--------------
  demo
  --------------*/
  table {
- 	border-collapse: collapse;
- 	margin: 10px 0;
+   border-collapse: collapse;
+   margin: 10px 0;
  }
  table caption { text-align: center; }
  tr { border-bottom: 1px solid #aaa; }
  tr:first-child { border-top: 1px solid #aaa; }
  td, th {
- 	border-right: 1px solid #aaa;
- 	text-align: center;
- 	width: 80px;
+   border-right: 1px solid #aaa;
+   text-align: center;
+   width: 80px;
  }
  td:last-child, th:last-child {
- 	border-right: none;
+   border-right: none;
  }
 
 /*--------------
  app
  --------------*/
  #front button {
- 	font-size: 1.5em;
- 	width: 300px;
+   font-size: 1.5em;
+   width: 300px;
  }
 
  #file-select div {
- 	float: left;
- 	height: 300px;
- 	width: 430px;
+   float: left;
+   height: 300px;
+   width: 430px;
  }
  #file-select div:last-child {
- 	border-left: 1px solid #aaa;
- 	padding-left: 39px;
+   border-left: 1px solid #aaa;
+   padding-left: 39px;
  }
